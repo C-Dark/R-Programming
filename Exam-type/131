@@ -62,3 +62,9 @@ points(x,y)
 
 
 #11
+
+#15
+A<-matrix(c(1,-1,1,2,0,4,1.5,-0.5,2.5),3,3,byrow=F)
+b<-c(1,1,4)
+solve(A,b)
+#ANSWER: -999 IT HAS NO SOLUTION
