@@ -66,5 +66,8 @@ points(x,y)
 #15
 A<-matrix(c(1,-1,1,2,0,4,1.5,-0.5,2.5),3,3,byrow=F)
 b<-c(1,1,4)
-solve(A,b)
+Ab<-cbind(A,b)
+rA<-qr(A)
+rAb<-qr(Ab)
+rA$rank==rAb$rank
 #ANSWER: -999 IT HAS NO SOLUTION
