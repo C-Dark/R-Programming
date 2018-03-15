@@ -25,6 +25,13 @@ abline(h=2)
 curve((-x+5),c(0,12),add=T)
 curve((0.5*x-4.5),c(0,12),add=T)
 #answer d
+#14
+a<-matrix(c(104,104,104,94,113,104),3,2,byrow=F)
+b<-c(117.8,130,125.8)
+ab<-cbind(a,b)
+qa<-qr(a)
+qab<-qr(ab)
+qa$rank==qab$rank
 
 #15- ans 2.00
 a<-matrix(c(1,3,5,2,8,14,1,5,9),3,3,byrow=T)
