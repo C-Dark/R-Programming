@@ -5,3 +5,15 @@ m<-function(x) (2*x-4*(((exp(-x^2)+9)-(5*x))/3)-exp(-(((exp(-x^2)+9)-(5*x))/3)^2
 fy<-function(x)(((exp(-x^2)+9)-5*x)/3)
 r2<-uniroot(m,c(-100,100))
 fy(r2$root)
+
+#14
+a<-matrix(c(98,114,108,108,107,113),3,2,byrow=F)
+b<-c(122.6,133.3,132.1)
+cost<-c(99.00,98.55)
+costb<-119.575
+qr(a)
+qr(cbind(a,b))
+library(MASS)
+inva<-ginv(a)
+quantity<-inva%*%b
+cost%*%quantity < costb
