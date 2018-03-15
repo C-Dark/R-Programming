@@ -1,1 +1,49 @@
 
+#1-0
+9.847709E+20<3.518437E13
+
+#2-0
+curve((-x+3),from=-1,to=3))
+curve((x^2-2*x+1),c(from=-1,to=3),add=T)
+
+#3-1.00
+A
+
+#4-3
+x<-seq(0.4,3,len=11)
+y<-10+sin(10*x)
+g<-function(x)exp(x)
+h<-function(x)-12*x+15
+curve(h,from =-2,to=5)
+curve(g,from =-2,to=5,add=T)
+points(x,y)
+
+#5- -2.99
+6-999.00
+
+#7-0.32
+
+#8-0
+f<-function(x,y)(x^2-2*x*y+y^2-3*x)
+g<-function(x,y)((x+1)^2+(y-1)^2-1)
+x<-seq(-10,10,len=100)
+y<-seq(-10,10,len=100)
+z<-outer(x,y,f)
+w<-outer(x,y,g)
+contour(x,y,z,levels=0,col=2)
+contour(x,y,w,levels=0,col=3,add=T)
+
+##exe 8 foglio 101
+f<-function(y) (2*sqrt(1-y)-2*y+1)
+uniroot(f,-10,10)
+
+
+9-0.03
+10-3.00
+11-0.32
+12-1.41
+13-1.00
+14-3.00
+15- -999.00
+16- 2.00
+#17-4.00
