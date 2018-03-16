@@ -26,9 +26,9 @@ optimize(f,c(-1,0))
 ans- -8
 
 #7
-f<-function(x)((x/100)+(0.02*exp(0.086*x))-1)
+f<-function(x)((x/100)+(0.2*exp(0.086*x))-1)
 uniroot(f,c(0,100))
-ans-39.62
+ans-16.60
 
 #8
 f<-function(x,y) x^2+2*x*y+y^2+x
@@ -58,8 +58,6 @@ points(x,y)
 abline(h=0)
 ans-A
 
-#12
-
 #11
 f<-function(x,y)((x^2+x*y+y^2-y)/2+(exp(-x^2+2*x))+(exp(-y^2+y)))
 x<-seq(-10,10,len=100)
@@ -70,8 +68,20 @@ image(x,y,z)
 contour(x,y,z,nlevels=50,add=T)
 contour(x,y,z,nlevels=100,add=T)
 optim(c(-2,2),fb)
-ans-0.5977833
+ansWER-0.5977833
 
+#12
+f<-function(x,y)(0.5*x^0.5*x^0.5)
+x<-seq(0,5,len=100)
+y<-seq(0,5,len=100)
+fb<-function(x) f(x[1],x[2])
+z<-outer(x,y,f)
+image(x,y,z)
+a<-matrix(c(1,0,0,1,-0.5,-0.5),3,2,byrow=T)
+b<-c(0,0,-2)
+abline(4,-1,lwd=2)
+constrOptim(c(0.7,0.2),fb,NULL,a,b,control=list(fnscale=-1))
+ANS-??
 
 #14
 a<-matrix(c(106,106,106,109,105,110),3,2,byrow=F)
