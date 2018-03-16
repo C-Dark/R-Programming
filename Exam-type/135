@@ -51,7 +51,19 @@ curve((x-7),from= -5,to=10,add=T)
 points(x,y)
 abline(h=0)
 ans-A
+
 #11
+f<-function(x,y)((x^2+x*y+y^2-y)/2+(exp(-x^2+2*x))+(exp(-y^2+y)))
+x<-seq(-10,10,len=100)
+y<-seq(-10,10,len=100)
+fb<-function(x)f(x[1],x[2])
+z<-outer(x,y,f)
+image(x,y,z)
+contour(x,y,z,nlevels=50,add=T)
+contour(x,y,z,nlevels=100,add=T)
+optim(c(-2,2),fb)
+ans-0.5977833
+
 
 #14
 a<-matrix(c(106,106,106,109,105,110),3,2,byrow=F)
