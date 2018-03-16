@@ -54,6 +54,10 @@ uniroot(f,-10,10)
 13-1.00
 14-3.00
 15- -999.00
+a<-matrix(c(1,-3,-5,-1,5,8,1,-1,-2),3,3,byrow=T)
+b<-c(1,1,4)
+qr(a)$rank==qr(cbind(a,b))$rank
+#false=>no sol
 
 16- 2.00
 exp<-100000
