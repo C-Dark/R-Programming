@@ -3,8 +3,9 @@
 9.847709E+20<3.518437E13
 
 #2-0
-curve((-x+3),from=-1,to=3))
+curve((-x+3),from=-1,to=3)
 curve((x^2-2*x+1),c(from=-1,to=3),add=T)
+ANS-0
 
 #3-1.00
 A
@@ -17,11 +18,19 @@ h<-function(x)-12*x+15
 curve(h,from =-2,to=5)
 curve(g,from =-2,to=5,add=T)
 points(x,y)
+#ans=c
 
-#5- -2.99
-6-999.00
+#5 ans -2.99
+
+#6 ans-999.00
+f<- function(x) -x^4+x^3-x^2+x+3
+curve(f,from=-10,to=10)
 
 #7-0.32
+f<-function(x) x^3+3*x^2+4*x+1
+curve(f,from=-10,to=10)
+uniroot(f,c(-10,10))
+
 
 #8-0
 f<-function(x,y)(x^2-2*x*y+y^2-3*x)
@@ -45,5 +54,18 @@ uniroot(f,-10,10)
 13-1.00
 14-3.00
 15- -999.00
+
 16- 2.00
+exp<-100000
+count<-0
+for(i in 1:exp){
+a<-rnorm(1)
+b<-rnorm(1)
+c<-rnorm(1)
+if(max(a,b,c)>0.4)count<-count+1
+}
+count/exp
+#risp: 0.71721
+
 #17-4.00
+d
