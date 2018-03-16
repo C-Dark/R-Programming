@@ -1,5 +1,81 @@
+#1
+FALSE:THEY ARE BIG
+
+#2
+curve((-x^2-2*x),from=-2,to=1)
+curve((x-1),from=-2,to=1,add=T)
+#ans -3
+
+#3 ans=D
+
+#4 
+ans-c
+
+#5
+set.seed(182)
+n<-runif(12)
+a<-matrix(c(n),4,3,byrow=F)
+u<-a%*%(c(1,-2,-1))
+sum(u)
+ans- -4.752961
+
+#6
+f<-function(x)x^4-2*x^3-3*x^2+4*x-4
+curve(f,from=-10,to=10)
+optimize(f,c(-1,0))
+ans- -8
+
+#7
+f<-function(x)((x/100)+(0.02*exp(0.086*x))-1)
+uniroot(f,c(0,100))
+ans-39.62
+
+#8
+f<-function(x,y) x^2+2*x*y+y^2+x
+g<-function(x,y) (x-1)^2+(y-1)^2-1
+x<-seq(-10,10,len=100)
+y<-seq(-10,10,len=100)
+zf<-outer(x,y,f)
+zg<-outer(x,y,g)
+contour(x,y,zf,levels=0,col=2)
+contour(x,y,zg,levels=0,col=3,add=T)
+ans-0
+
+#9
+#10
+set.seed(195)
+x<-1:10
+y<-rnorm(10)
+curve((-0.5*x+4.5),from= -5,to=10)
+curve((x-7),from= -5,to=10,add=T)
+points(x,y)
+abline(h=0)
+ans-A
+#11
+
 #14
 a<-matrix(c(106,106,106,109,105,110),3,2,byrow=F)
 b<-c(128,126.6,130.6)
-qr(a)
-qr(cbind(a,b))
+qr(a)$rank == qr(cbind(a,b))$rank
+
+#15
+a<-matrix(c(1,0,-1,-1,2,5,1,2,3),3,3,byrow=T)
+b<-c(3,-1,5)
+solve(a)
+library(MASS)
+p<-ginv(a)%*%b
+sum(p)
+ANS-4
+
+#16
+count<-0
+for (i in 1:100000){
+a<-rnorm(1)
+b<-rnorm(1)
+if(min(a,b)>0.3)(count<-count+1)
+}
+count/100000
+ANS-D
+
+#17
+ans:A
