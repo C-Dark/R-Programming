@@ -1,1 +1,18 @@
+#8
+f<-function(x,y) x^2+2*x*y+y^2+3*x
+g<-function(x,y) (x+1)^2+(y-1)^2-1
+x<-seq(-10,10,len=100)
+y<-seq(-10,10,len=100)
+fb<-function(x)f(x[1],x[2])
+gb<-function(x)g(x[1],x[2])
+fz<-outer(x,y,f)
+gz<-outer(x,y,g)
+contour(x,y,fz,levels=0,col="blue")
+contour(x,y,gz,levels=0,col="red",add=T)
+#ans-2
 
+#13
+f<- function(x)((5*exp(2*x))-(0.3*exp(4*x)))
+curve(f,from=0,to=10)
+optimize(f,c(0,10),maximum=T)
+#best price for seller is 1.06 (20.83 profit)
