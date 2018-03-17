@@ -1,3 +1,5 @@
+#139
+
 #8
 f<-function(x,y) x^2+2*x*y+y^2+3*x
 g<-function(x,y) (x+1)^2+(y-1)^2-1
@@ -11,8 +13,44 @@ contour(x,y,fz,levels=0,col="blue")
 contour(x,y,gz,levels=0,col="red",add=T)
 #ans-2
 
+#9
+price<-101.48
+rate<-3.5
+mon<-1
+f<-function(r)-price+(rate/2)*(1+r)^(-(mon)/12) +(rate/2)*(1+r)^(-(mon+6)/12) +(rate/2)*(1+r)^(-(mon+12)/12)+100*(1+r)^(-(mon+12)/12)
+uniroot(f,c(0,0.5))
+#ans -0.035
+
 #13
 f<- function(x)((5*exp(2*x))-(0.3*exp(4*x)))
 curve(f,from=0,to=10)
 optimize(f,c(0,10),maximum=T)
 #best price for seller is 1.06 (20.83 profit)
+#so ans=B
+
+#14
+a<-matrix(c(107,105,108,116,104,113),3,2,byrow=F)
+b<-c(143.5,135.9,144.4)
+pab<-c(95.67,99.81)
+pb<-126.495
+qr(a)$rank==qr(cbind(a,b))$rank
+#false=>no sol. no rep no arb
+
+#15
+a<-matrix(c(1,2,3,-1,0,1,1,4,7),3,3,byrow=T)
+b<-c(5,-3,7)
+qr(a)$rank==qr(cbind(a,b))$rank
+solve(a)
+library(MASS)
+sum(ginv(a)%*%b)
+#ans-4
+
+#16
+count<-0
+expe<-100000
+for(j in 1:expe){
+a<-runif(1)
+b<-runif(1,0.1,1)
+if(a>b)(count<-count+1)
+}
+count/expe
