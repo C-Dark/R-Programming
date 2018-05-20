@@ -21,6 +21,29 @@ f<-function(r)-price+(rate/2)*(1+r)^(-(mon)/12) +(rate/2)*(1+r)^(-(mon+6)/12) +(
 uniroot(f,c(0,0.5))
 #ans -0.035
 
+#11
+f<-function(x,y)((x^2+x*y+y^2-y)/3)+exp(-x^2)+exp(-y^2-y)
+x<-seq(-5,5,len=100)
+y<-seq(-5,5,len=100)
+z<-outer(x,y,f)
+image(x,y,z)
+contour(x,y,z,add=T,nlevels=50)
+fb<-function(x)f(x[1],x[2])
+optim(c(-1,2),fb)
+
+#12
+f<-function(l,k)0.45*l^0.7*k^0.3
+l<-seq(0,8,len=100)
+k<-seq(0,8,len=100)
+z<-outer(l,k,f)
+image(l,k,z)
+contour(l,k,z,add=T)
+curve(8-x,0,8,add=T)
+fb<-function(l)f(l[1],l[2])
+A<-matrix(c(1,0,0,1,-0.5,-0.5),3,2,byrow=T)
+b<-c(0,0,-4)
+constrOptim(c(3,1),fb,NULL,A,b,control=list(fnscale=-1))
+
 #13
 f<- function(x)((5*exp(2*x))-(0.3*exp(4*x)))
 curve(f,from=0,to=10)
